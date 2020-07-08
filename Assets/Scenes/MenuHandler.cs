@@ -1,32 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class MenuHandler : MonoBehaviour
 {
-    public static bool menuOpened = false;
-    public GameObject menuUI;
+    public GameObject menuButton;
+    public GameObject menu;
+    public GameObject drone;
+    public GameObject advancedMenu;
+    private List<Renderer> avatarRenderers = new List<Renderer>();
 
-    void Update()
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.RightAlt) || Input.GetKeyDown(KeyCode.LeftAlt))
-        {
-            if (menuOpened)
-                CloseMenu();
-            else
-                OpenMenu();
-        }
+        foreach (GameObject avatarParent in GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[])
+            if (avatarParent.CompareTag("Avatar") & avatarParent.GetComponent<Renderer>() != null)
+                avatarRenderers.Add(avatarParent.GetComponent<Renderer>());
     }
 
-    void CloseMenu()
+    public void ToggleMenuVisibility()
     {
-        menuUI.SetActive(false);
-        menuOpened = false;
+        menu.SetActive(!menu.activeSelf);
+        menuButton.SetActive(!menuButton.activeSelf);
     }
 
-    void OpenMenu()
+    public void ToggleAdvMenuVisibility()
     {
-        menuUI.SetActive(true);
-        menuOpened = true;
+        advancedMenu.SetActive(!advancedMenu.activeSelf);
+        menu.SetActive(!menu.activeSelf);
+    }
+
+    public void ToggleDroneVisibility()
+    {
+        drone.SetActive(!drone.activeSelf);
+    }
+
+    public void ToggleAvatarVisibility()
+    {
+        foreach (Renderer renderer in avatarRenderers)
+            renderer.enabled = !renderer.enabled;
     }
 }

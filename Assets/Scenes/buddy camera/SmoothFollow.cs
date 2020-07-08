@@ -5,11 +5,21 @@ public class SmoothFollow : MonoBehaviour
 {
 
 	public Transform target;
+	public Camera buddyCamera;
 	private float smoothSpeed = 0.125f;
+
 	public Vector3 offset;
+	private float FOV;
 	private float angle;
+
 	private float radiusOfRotation;
 	private float theta;
+
+	void Start()
+    {
+		buddyCamera = this.GetComponent<Camera>();
+		FOV = 60.0f;
+    }
 
 	void FixedUpdate()
 	{
@@ -19,6 +29,7 @@ public class SmoothFollow : MonoBehaviour
 		Vector3 desiredPosition = target.position + newOffset;
 		Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
 		transform.position = smoothedPosition;
+		buddyCamera.fieldOfView = FOV;
 		transform.LookAt(target);
 	}
 
@@ -32,4 +43,9 @@ public class SmoothFollow : MonoBehaviour
 	{
 		angle = sliderAngle;
 	}
+
+	public void SlideFieldOfView(float SliderFieldOfView)
+    {
+		FOV = SliderFieldOfView;
+    }
 }
