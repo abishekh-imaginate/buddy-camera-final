@@ -7,6 +7,7 @@ public class MenuHandler : MonoBehaviour
     public GameObject canvasObject;
     public GameObject notificationObject;
     public GameObject minimapObject;
+    public GameObject videoCaptureObject;
     public GameObject buddyCameraButton;
     public GameObject menuButton;
     public GameObject menu;
@@ -27,6 +28,7 @@ public class MenuHandler : MonoBehaviour
         notificationObject.SetActive(!notificationObject.activeSelf);
         menuButton.SetActive(!menuButton.activeSelf);
         minimapObject.SetActive(!minimapObject.activeSelf);
+        videoCaptureObject.SetActive(!videoCaptureObject.activeSelf);
     }
 
     public void setDecisionNo()
@@ -42,6 +44,7 @@ public class MenuHandler : MonoBehaviour
         {
             menuButton.SetActive(!menuButton.activeSelf);
             minimapObject.SetActive(!minimapObject.activeSelf);
+            videoCaptureObject.SetActive(!videoCaptureObject.activeSelf);
         }
     }
 
