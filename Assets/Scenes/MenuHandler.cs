@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class MenuHandler : MonoBehaviour
 {
-    public GameObject canvasObject;
     public GameObject notificationObject;
     public GameObject minimapObject;
+    public GameObject buddyCameraObject;
     public GameObject videoCaptureObject;
     public GameObject buddyCameraButton;
-    public GameObject menuButton;
     public GameObject menu;
     public GameObject drone;
     public GameObject advancedMenu;
     private List<Renderer> avatarRenderers = new List<Renderer>();
-    private bool decision;
 
     void Start()
     {
@@ -26,8 +24,9 @@ public class MenuHandler : MonoBehaviour
     public void setDecisionYes()
     {
         notificationObject.SetActive(!notificationObject.activeSelf);
-        menuButton.SetActive(!menuButton.activeSelf);
+        menu.SetActive(!menu.activeSelf);
         minimapObject.SetActive(!minimapObject.activeSelf);
+        buddyCameraObject.SetActive(!buddyCameraObject.activeSelf);
         videoCaptureObject.SetActive(!videoCaptureObject.activeSelf);
     }
 
@@ -42,21 +41,16 @@ public class MenuHandler : MonoBehaviour
             notificationObject.SetActive(!notificationObject.activeSelf);
         else
         {
-            menuButton.SetActive(!menuButton.activeSelf);
+            menu.SetActive(!menu.activeSelf);
             minimapObject.SetActive(!minimapObject.activeSelf);
+            buddyCameraObject.SetActive(!buddyCameraObject.activeSelf);
             videoCaptureObject.SetActive(!videoCaptureObject.activeSelf);
         }
     }
 
-    public void ToggleMenuVisibility()
-    {
-        menu.SetActive(!menu.activeSelf);
-        menuButton.SetActive(!menuButton.activeSelf);
-        buddyCameraButton.SetActive(!buddyCameraButton.activeSelf);
-    }
-
     public void ToggleAdvMenuVisibility()
     {
+        buddyCameraButton.SetActive(!buddyCameraButton.activeSelf);
         advancedMenu.SetActive(!advancedMenu.activeSelf);
         menu.SetActive(!menu.activeSelf);
     }
