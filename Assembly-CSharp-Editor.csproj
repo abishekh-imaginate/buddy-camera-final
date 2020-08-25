@@ -633,9 +633,6 @@
  <Reference Include="Unity.AssetBundleBrowser.Editor">
  <HintPath>C:/Users/M.RETHINASAMY/Desktop/buddy-camera-final/Library/ScriptAssemblies/Unity.AssetBundleBrowser.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/M.RETHINASAMY/Desktop/buddy-camera-final/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
  <HintPath>C:/Users/M.RETHINASAMY/Desktop/buddy-camera-final/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
@@ -647,11 +644,6 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{697883AF-27CE-CAC0-EAAA-1C76EB84493C}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{939A1B41-452F-58E1-7476-E4005ACD852C}</Project>
       <Name>Assembly-CSharp</Name>

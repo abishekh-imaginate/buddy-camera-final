@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Avatar
+  - Buddy Camera
   layers:
   - Default
   - TransparentFX
