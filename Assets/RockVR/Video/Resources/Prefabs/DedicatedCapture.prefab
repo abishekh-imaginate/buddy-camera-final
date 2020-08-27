@@ -99,8 +99,8 @@ MonoBehaviour:
   isDedicated: 1
   captureGUI: 1
   mode: 0
-  customPath: 1
-  customPathFolder: C:\Users\M.RETHINASAMY\Desktop\buddy-camera-final\video-capture
+  customPath: 0
+  customPathFolder: 
   streamingAddress: 
   interPupillaryDistance: 0.0635
   offlineRender: 0

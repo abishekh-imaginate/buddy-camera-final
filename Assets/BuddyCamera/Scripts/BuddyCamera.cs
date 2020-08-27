@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using UnityEngine;
 using UnityEngine.UI;
+using RockVR.Video;
 
 public class BuddyCamera : MonoBehaviour
 {
@@ -11,9 +12,9 @@ public class BuddyCamera : MonoBehaviour
 	private float FOV = 60.0f;
 	private float angle;
 
-	//public bool useCustomUI = false;
 	private List<Renderer> avatarRenderers = new List<Renderer>();
 	private int presetViewNumber = 0;
+
 
 	public Transform target;
 	public float smoothSpeed = 0.1f;
@@ -26,6 +27,8 @@ public class BuddyCamera : MonoBehaviour
 	public Slider angleSlider;
 	public Slider fieldOfViewSlider;
 	public Button changeViewButton;
+	public Button startCaptureButton;
+	public Button stopCaptureButton;
 
 	void Start()
 	{
@@ -50,6 +53,10 @@ public class BuddyCamera : MonoBehaviour
 			fieldOfViewSlider.onValueChanged.AddListener(delegate { OnValueChangeFieldOfViewSlider(); });
 		if (changeViewButton)
 			changeViewButton.onClick.AddListener(OnClickChangeViewButton);
+		if (startCaptureButton)
+			startCaptureButton.onClick.AddListener(onClickStartCaptureButton);
+		if (stopCaptureButton)
+			stopCaptureButton.onClick.AddListener(onClickStopCaptureButton);
 	}
 
 	void FixedUpdate()
@@ -147,4 +154,16 @@ public class BuddyCamera : MonoBehaviour
 			presetViewNumber = 0;
 		}
 	}
+
+	//starts to capture video
+	public void onClickStartCaptureButton()
+    {
+		VideoCaptureCtrl.instance.StartCapture();
+    }
+
+	//stops capturing video
+	public void onClickStopCaptureButton()
+    {
+		VideoCaptureCtrl.instance.StopCapture();
+    }
 }
