@@ -5,33 +5,34 @@ using UnityEngine;
 public class BuddyCameraUI2 : MonoBehaviour
 {
     public GameObject buddyCameraObject;
-    public GameObject mainMenuCanvasObject;
-    public GameObject startCaptureCanvas;
-    public GameObject stopCaptureCanvas;
+    public GameObject buddyCameraButton;
+    public GameObject menuObject;
+    public GameObject startCaptureButton;
+    public GameObject stopCaptureButton;
 
     public void OnClickBuddyCameraButton()
     {
-        mainMenuCanvasObject.SetActive(true);
+        buddyCameraButton.SetActive(false);
+        menuObject.SetActive(true);
         buddyCameraObject.SetActive(true);
-        startCaptureCanvas.SetActive(true);
     }
 
     public void OnClickExitBuddyCameraButton()
     {
-        startCaptureCanvas.SetActive(false);
         buddyCameraObject.SetActive(false);
-        mainMenuCanvasObject.SetActive(false);
+        menuObject.SetActive(false);
+        buddyCameraButton.SetActive(true);
     }
 
     public void OnClickStartCaptureButton()
     {
-        startCaptureCanvas.SetActive(false);
-        stopCaptureCanvas.SetActive(true);
+        startCaptureButton.SetActive(false);
+        stopCaptureButton.SetActive(true);
     }
 
     public void OnClickStopCaptureButton()
     {
-        stopCaptureCanvas.SetActive(false);
-        startCaptureCanvas.SetActive(true);
+        stopCaptureButton.SetActive(false);
+        startCaptureButton.SetActive(true);
     }
 }

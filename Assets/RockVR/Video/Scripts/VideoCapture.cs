@@ -84,6 +84,11 @@ namespace RockVR.Video
     /// </summary>
     public class VideoCapture : VideoCaptureBase
     {
+        //private string appDataPath;
+        //void Start()
+        //{
+        //    appDataPath = Application.dataPath;
+        //}
         /// <summary>
         /// Get or set the current status.
         /// </summary>
@@ -206,7 +211,7 @@ namespace RockVR.Video
             }
             if (mode == ModeType.LOCAL)
             {
-                filePath = PathConfig.SaveFolder + StringUtils.GetMp4FileName(StringUtils.GetRandomString(5));
+                filePath = Application.dataPath + StringUtils.GetMp4FileName(StringUtils.GetRandomString(5));
             }
             // Create a RenderTexture with desired frame size for dedicated
             // camera capture to store pixels in GPU.
@@ -721,6 +726,11 @@ namespace RockVR.Video
     /// </summary>
     public class VideoMuxing
     {
+        //private string appDataPath;
+        //void Start()
+        //{
+        //    appDataPath = Application.dataPath;
+        //}
         /// <summary>
         /// The merged video file path.
         /// </summary>
@@ -749,7 +759,7 @@ namespace RockVR.Video
         /// </summary>
         public bool Muxing()
         {
-            filePath = PathConfig.SaveFolder + StringUtils.GetMp4FileName(StringUtils.GetRandomString(5));
+            filePath = Application.dataPath + StringUtils.GetMp4FileName(StringUtils.GetRandomString(5));
             System.IntPtr libAPI = MuxingLib_Get(
                 videoCapture.bitrate,
                 filePath,

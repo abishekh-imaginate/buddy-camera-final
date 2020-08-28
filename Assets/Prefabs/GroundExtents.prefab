@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8323044075152017836}
   - component: {fileID: 4229998521814860738}
   m_Layer: 0
-  m_Name: GroundExtents (1)
+  m_Name: GroundExtents
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
